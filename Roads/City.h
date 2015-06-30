@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include "Entity.h"
@@ -24,5 +25,7 @@ public:
 	bool hasRoadTo(City*);
 	std::vector<Road*> getRoads();
 	Road* getRoadTo(City* to);
+	Road* getRoadByIndex(unsigned int index);
+	unsigned int getRoadsCount();
 };
 

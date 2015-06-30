@@ -1,26 +1,26 @@
 #include "Road.h"
 
-Road::Road(City* a, City* b, float d)
+Road::Road(City* departure, City* destination, float d)
 {
-	from = a;
-	to = b;
-	setDistance(d);
+	this->from = departure;
+	this->to = destination;
+	this->setDistance(d);
 }
 
 void Road::setDistance(float d){
-	distance = d;
+	this->distance = d;
 };
 
 float Road::getDistance(){
-	return distance;
+	return this->distance;
 };
 
 City* Road::getDeparture(){
-	return from;
+	return this->from;
 }
 
 City* Road::getDestination(){
-	return to;
+	return this->to;
 }
 
 Road::~Road()

@@ -18,10 +18,12 @@ private:
 public:
 	Route(City* from, City* to);
 	~Route();
+	bool isDone();
 	Route* clone();
 	bool addCity(City* step);
-	void Route::setRoads(std::vector<Road*> l);
-	void Route::setCities(std::vector<City*> l);
+	void setRoads(std::vector<Road*> l);
+	void setCities(std::vector<City*> l);
+	unsigned int getCityCount();
 	City* getLast();
 	float getLength();
 	std::vector<std::string> getNames();

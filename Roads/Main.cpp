@@ -32,8 +32,6 @@ int main()
 	City* kazan = addCity(new City("Казань"));
 	City* saransk = addCity(new City("Саранск"));
 	City* ulyanovsk = addCity(new City("Ульяновск"));
-	
-	City* moscow2 = moscow;
 
 	// Москва -> Нижний Новгород
 	moscow->addRoad(novgorod, 417);
@@ -73,11 +71,14 @@ int main()
 	else{
 		std::vector<std::string> namesList = shortlyRoute->getNames();
 
-		printf("Путь от %s до %s:\n", from->getName(), to->getName());
+		printf("Путь от %s до %s:\n", from->getName().c_str(), to->getName().c_str());
 
-		for (unsigned int i = 0; i < namesList.size(); ++i){
-			printf("%d. %s\n", i + 1, namesList[i]);
+		unsigned int number = 1;
+
+		for (std::string name : namesList){
+			printf("%d. %s\n", number++, name.c_str());
 		}
+
 	}
 
 	system("pause");

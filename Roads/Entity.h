@@ -8,7 +8,7 @@ protected:
 public:
 	Entity();
 	virtual ~Entity();
-	void setName(std::string name);
-	std::string getName();
+	virtual void setName(std::string name);
+	virtual std::string getName();
 };
 
