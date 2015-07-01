@@ -47,8 +47,17 @@ int main()
 	// Нижний Новгород -> Казань
 	novgorod->addRoad(kazan, 395);
 
+	// Нижний Новгород -> Ульяновск
+	novgorod->addRoad(ulyanovsk, 444);
+
+	// Нижний Новгород -> Саранск
+	novgorod->addRoad(saransk, 282);
+
 	// Казань -> Ижевск
 	kazan->addRoad(izhevsk, 379);
+
+	// Казань -> Ульяновск
+	kazan->addRoad(ulyanovsk, 227);
 
 	// Москва -> Саранск
 	moscow->addRoad(saransk, 656);
