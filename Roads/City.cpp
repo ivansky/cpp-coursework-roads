@@ -81,6 +81,8 @@ Route* City::getRouteTo(City* to){
 		// Each in Routes List
 		for (unsigned int i = 0; i < routes.size(); ++i){
 
+			unsigned int routeIndex = i;
+
 			Route* currentRoute = *(routes.begin() + i);
 
 			City* currentCity = currentRoute->getLast();
@@ -105,21 +107,31 @@ Route* City::getRouteTo(City* to){
 
 				Route* cloneRoute = currentRoute->clone();
 
+				bool currentAccepted;
+
 				if (currentRoute->addCity(currentDestination)){
 
 					acceptedRoads++;
+
+					currentAccepted = true;
 
 				}
 				else{
 
 					delete currentRoute;
 
-					routes.erase(routes.begin() + i);
+					currentRoute = nullptr;
+
+					routes.erase(routes.begin() + routeIndex);
+
+					currentAccepted = false;
 
 				}
 
-				if (r < roadSize - 1)
+				if (r < roadSize - 1){
 					routes.push_back(cloneRoute);
+					routeIndex = routes.size() - 1;
+				}
 
 				currentRoute = cloneRoute;
 			
