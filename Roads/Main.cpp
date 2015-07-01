@@ -164,6 +164,7 @@ void clearConsole(){
 	// Assume POSIX
 	std::system("clear");
 #endif
+	std::cout << "Coursework `Roads` by Ivan Martianov. Ver 1.0" << '\n' << std::endl;
 };
 
 void sleepEnter() {
